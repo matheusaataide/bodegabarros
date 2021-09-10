@@ -4,17 +4,23 @@
   "description": "Sistema para controle de pedidos para pizzaria.",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "test": "concurrently \"npm run server\" \"npm run pos\"",
-    "build": "npm run buildServer",
+    "start": "node dist",
+    "prestart": "npm install --only=prod",
+    
+    "build": "npm run buildServer && npm run buildClient",
     "buildServer": "rimraf dist && babel src -s -D -d dist --presets @babel/env",
-    "server": "cross-env NODE_ENV=development nodemon --ignore ./frontend --exec \"babel-node src --presets @babel/env --trace-warnings\"",
-    "pos": "cd pos && npm start"
+    "buildClient": "cd frontend && npm run build",
+    
+    "install": "npm i && cd pos && npm install && cd ..",
+    "dev": "cross-env NODE_ENV=development concurrently -c green,cyan \"npm:server\" \"npm:pos\"",
+    "server": "nodemon --ignore ./pos --exec \"babel-node src --presets @babel/env --trace-warnings\"",
+    "pos": "cd pos && concurrently -n less,reactjs \"less-watch-compiler --config src/config/lessConfig.json\" \"npm start\""
   },
   "author": "Matheus Ataide <matheusantonio96@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -33,6 +39,8 @@
     "concurrently": "^6.2.0",
     "create-react-app": "^4.0.3",
     "cross-env": "^7.0.3",
+    "less": "^4.1.1",
+    "less-watch-compiler": "^1.16.2",
     "nodemon": "^2.0.12",
     "rimraf": "^3.0.2",
     "sequelize-cli": "^6.2.0"

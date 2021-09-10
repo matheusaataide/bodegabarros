@@ -9,7 +9,7 @@ import routes from './routes';
 
 const server = new express();
 
-const pathEnv = process.env.NODE_ENV === "development" ? ".env.local" : ".env";
+const pathEnv = process.env.NODE_ENV === "development" ? ".env.dev" : ".env";
 dotenv.config({ path: path.resolve(__dirname, '..', pathEnv) });
 
 // Middlewares
@@ -28,13 +28,13 @@ server.use(
 server.set('database', database);
  
 // Rotas API
-server.use('/api/', routes);
+server.use('/api/', routes); 
 
 // Definindo porta para conexões
 const port = process.env.PORT || 3000;
 server.listen(port, () => {
     const nodeEnv = process.env.NODE_ENV.toUpperCase();
-    console.log(`[${nodeEnv}] Server is running on ${process.env.HOSTNAME}:${port}`)
-}); 
+    console.log(`[${nodeEnv}] App is running on ${process.env.HOSTNAME}:${port}`)
+});
 
 export default server;

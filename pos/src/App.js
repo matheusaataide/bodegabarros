@@ -1,23 +1,17 @@
-import { AppBar, Toolbar, IconButton, Typography,  Button } from '@material-ui/core';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Homepage from './pages/Homepage';
 
-function App() {
-	return (
-    	<div className="App">
-      		<AppBar position="static">
-				<Toolbar>
-					<IconButton 
-						edge="start" 
-						color="inherit" 
-						aria-label="menu">
-					</IconButton>
-					<Typography variant="h6">
-						News
-					</Typography>
-					<Button color="inherit">Login</Button>
-				</Toolbar>
-			</AppBar>
-    	</div>
-  	);
-}
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+import './global.css';
 
+const App = () => (
+	<BrowserRouter>
+        <Switch>    
+            <Route exact path='/' component={ Homepage } />
+        </Switch>
+    </BrowserRouter>
+);
+ 
 export default App;

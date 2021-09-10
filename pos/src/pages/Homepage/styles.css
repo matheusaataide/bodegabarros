@@ -1,0 +1,18 @@
+.homepage .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+  margin-top: 60px;
+}
+.homepage .intro::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40vw;
+  height: 60vh;
+  background-color: var(--color-primary);
+  border-bottom-left-radius: 2em;
+  content: "";
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,269 @@
+/*----------------------------------------------------------------
+    Navbar
+----------------------------------------------------------------*/
+.menu-item {
+    text-align: left;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;    
+    letter-spacing: .075rem;
+}
+
+.navbar {
+    padding: 0 1rem !important;
+    height: 60px;
+    z-index: 1000;
+
+    @media (min-width: 768px) {
+        padding: 3em;
+    }
+
+    .container {
+        vertical-align: top;
+        
+        & > div:first-child {
+            display: flex;
+        }
+    }
+
+    .navbar-toggler {
+        float: left;
+        margin-left: 0;
+        min-width: 42px;
+        border: 0;
+        color: #fff;
+
+        &:focus,
+        &:hover {
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon{
+            background: none !important;
+        }
+    }
+    
+
+    .title-page {
+        .menu-item();
+        font-size: 1.5rem;
+        padding-left: 1rem !important;
+        
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    .navbar-brand {
+        height: 60px;
+        padding-top: 8px;
+        
+        & > .logo {
+            max-height: 40px !important;
+            transition: all .5s;
+        }
+
+        & > .title-page {
+            display: inline;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        width: 100vw;
+        padding-top: .5em;
+        padding-bottom: 1em;
+        transition: all ease-in-out .3s;
+
+        @media (min-width: 768px) {
+            position: relative;
+            top: initial;
+            left: initial;
+            width: inherit;
+            padding: 0;
+        }
+
+        .contacts {
+            @media (min-width: 768px) {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .nav-link {
+            padding-left: 1.75rem !important;
+            padding-right: 1rem !important;
+            .menu-item();
+    
+            @media (min-width: 768px) {
+                padding-left: 1rem !important;
+            }
+
+            &.social-media {
+                display: none;
+
+                @media (min-width: 768px) {
+                    display: inline;
+                    font-size: 1em;
+                    padding-left: .75rem !important;
+                    padding-right: .75rem !important;    
+                }
+            }            
+    
+            &:not(.social-media) > svg {
+                margin-right: 1.25rem;
+                color: var(--color-highlight);
+
+                @media (min-width: 768px) {
+                    display: none;
+                }
+            }
+
+            .badge {
+                font-size: .65em;
+                vertical-align: super;
+            }
+        }
+    }
+
+    .page & {
+        background: white !important;
+        box-shadow: none;
+    
+        @media (min-width: 768px) {
+            background-color: transparent !important;
+        }
+    
+        .navbar-collapse {
+            background-color: var(--color-background);
+            border-top: solid 1px var(--color-primary-darken);
+            border-bottom: solid 1px var(--color-primary-darken);
+
+            @media (min-width: 768px) {
+                background-color: transparent;
+                border: none !important;
+            }
+        }
+
+        .navbar-toggler {
+            color: var(--color-primary);
+            
+            &:focus,
+            &:active {
+                color: var(--color-highlight);
+            }
+
+            .navbar-toggler-icon {
+                color: var(--color-primary-lighten);
+            }
+        }
+
+        .title-page {
+            color: var(--color-primary-lighten);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--color-gray);
+
+            &:active,
+            &:hover {
+                color: white;
+                background-color: var(--color-primary-lighten);
+
+                @media (min-width: 768px) {
+                    color: var(--color-primary-darken) !important;
+                    background-color: transparent !important;
+                }
+                
+                &:not(.social-media) svg {
+                    color: var(--color-highlight);
+                }
+            }
+
+            @media (min-width: 768px) {
+                font-weight: 700;
+                color: var(--color-primary-lighten) !important;
+            }
+
+            &.social-media {
+                color: var(--color-highlight) !important;
+
+                &:active svg,
+                &:hover svg {
+                    color: var(--color-primary-darken) !important;
+                }
+            }
+ 
+            svg {
+                color: var(--color-primary-lighten);
+            }
+
+            .contacts & {
+                color: white !important;
+            }
+        }
+    }
+
+    .page.theme-dark & {
+        background: var(--color-primary) !important;
+        box-shadow: 10px 0 20px 10% var(--color-primary-darken);
+    
+        .navbar-collapse {
+            background-color: var(--color-primary-darken);
+
+            @media (min-width: 992px) {
+                background-color: transparent;
+            }
+        }
+
+        .navbar-toggler {
+            .navbar-toggler-icon {
+                color: #fff !important;
+            }
+            
+            &:focus,
+            &:active{
+                .navbar-toggler-icon {
+                    color: var(--color-highlight);
+                }
+            }
+        }
+
+        .title-page {
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+
+             svg {
+                color: var(--color-highlight) !important;
+            }
+
+            &:active,
+            &:hover {
+                color: white;
+                background-color: var(--color-primary-lighten);
+
+                @media (min-width: 768px) {
+                    color: var(--color-primary-darken) !important;
+                    background-color: transparent !important;
+                }
+                
+                &:not(.social-media) svg {
+                    color: var(--color-highlight);
+                }
+            }
+        }
+    }
+
+    & + .main {
+        margin-top: 80px;
+    }
+}

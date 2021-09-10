@@ -1,0 +1,249 @@
+/*----------------------------------------------------------------
+    Navbar
+----------------------------------------------------------------*/
+.menu-item {
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
+}
+.navbar {
+  padding: 0 1rem !important;
+  height: 60px;
+  z-index: 1000;
+}
+@media (min-width: 768px) {
+  .navbar {
+    padding: 3em;
+  }
+}
+.navbar .container {
+  vertical-align: top;
+}
+.navbar .container > div:first-child {
+  display: flex;
+}
+.navbar .navbar-toggler {
+  float: left;
+  margin-left: 0;
+  min-width: 42px;
+  border: 0;
+  color: #fff;
+}
+.navbar .navbar-toggler:focus,
+.navbar .navbar-toggler:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+  background: none !important;
+}
+.navbar .title-page {
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
+  font-size: 1.5rem;
+  padding-left: 1rem !important;
+}
+@media (min-width: 768px) {
+  .navbar .title-page {
+    display: none;
+  }
+}
+.navbar .navbar-brand {
+  height: 60px;
+  padding-top: 8px;
+}
+.navbar .navbar-brand > .logo {
+  max-height: 40px !important;
+  transition: all 0.5s;
+}
+.navbar .navbar-brand > .title-page {
+  display: inline;
+}
+@media (min-width: 768px) {
+  .navbar .navbar-brand > .title-page {
+    display: none;
+  }
+}
+.navbar .navbar-collapse {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 100vw;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  transition: all ease-in-out 0.3s;
+}
+@media (min-width: 768px) {
+  .navbar .navbar-collapse {
+    position: relative;
+    top: initial;
+    left: initial;
+    width: inherit;
+    padding: 0;
+  }
+}
+@media (min-width: 768px) {
+  .navbar .navbar-collapse .contacts {
+    display: flex;
+    align-items: center;
+  }
+}
+.navbar .navbar-collapse .nav-link {
+  padding-left: 1.75rem !important;
+  padding-right: 1rem !important;
+  text-align: left;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
+}
+@media (min-width: 768px) {
+  .navbar .navbar-collapse .nav-link {
+    padding-left: 1rem !important;
+  }
+}
+.navbar .navbar-collapse .nav-link.social-media {
+  display: none;
+}
+@media (min-width: 768px) {
+  .navbar .navbar-collapse .nav-link.social-media {
+    display: inline;
+    font-size: 1em;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+.navbar .navbar-collapse .nav-link:not(.social-media) > svg {
+  margin-right: 1.25rem;
+  color: var(--color-highlight);
+}
+@media (min-width: 768px) {
+  .navbar .navbar-collapse .nav-link:not(.social-media) > svg {
+    display: none;
+  }
+}
+.navbar .navbar-collapse .nav-link .badge {
+  font-size: 0.65em;
+  vertical-align: super;
+}
+.page .navbar {
+  background: white !important;
+  box-shadow: none;
+}
+@media (min-width: 768px) {
+  .page .navbar {
+    background-color: transparent !important;
+  }
+}
+.page .navbar .navbar-collapse {
+  background-color: var(--color-background);
+  border-top: solid 1px var(--color-primary-darken);
+  border-bottom: solid 1px var(--color-primary-darken);
+}
+@media (min-width: 768px) {
+  .page .navbar .navbar-collapse {
+    background-color: transparent;
+    border: none !important;
+  }
+}
+.page .navbar .navbar-toggler {
+  color: var(--color-primary);
+}
+.page .navbar .navbar-toggler:focus,
+.page .navbar .navbar-toggler:active {
+  color: var(--color-highlight);
+}
+.page .navbar .navbar-toggler .navbar-toggler-icon {
+  color: var(--color-primary-lighten);
+}
+.page .navbar .title-page {
+  color: var(--color-primary-lighten);
+}
+.page .navbar .navbar-nav .nav-link {
+  color: var(--color-gray);
+}
+.page .navbar .navbar-nav .nav-link:active,
+.page .navbar .navbar-nav .nav-link:hover {
+  color: white;
+  background-color: var(--color-primary-lighten);
+}
+@media (min-width: 768px) {
+  .page .navbar .navbar-nav .nav-link:active,
+  .page .navbar .navbar-nav .nav-link:hover {
+    color: var(--color-primary-darken) !important;
+    background-color: transparent !important;
+  }
+}
+.page .navbar .navbar-nav .nav-link:active:not(.social-media) svg,
+.page .navbar .navbar-nav .nav-link:hover:not(.social-media) svg {
+  color: var(--color-highlight);
+}
+@media (min-width: 768px) {
+  .page .navbar .navbar-nav .nav-link {
+    font-weight: 700;
+    color: var(--color-primary-lighten) !important;
+  }
+}
+.page .navbar .navbar-nav .nav-link.social-media {
+  color: var(--color-highlight) !important;
+}
+.page .navbar .navbar-nav .nav-link.social-media:active svg,
+.page .navbar .navbar-nav .nav-link.social-media:hover svg {
+  color: var(--color-primary-darken) !important;
+}
+.page .navbar .navbar-nav .nav-link svg {
+  color: var(--color-primary-lighten);
+}
+.contacts .page .navbar .navbar-nav .nav-link {
+  color: white !important;
+}
+.page.theme-dark .navbar {
+  background: var(--color-primary) !important;
+  box-shadow: 10px 0 20px 10% var(--color-primary-darken);
+}
+.page.theme-dark .navbar .navbar-collapse {
+  background-color: var(--color-primary-darken);
+}
+@media (min-width: 992px) {
+  .page.theme-dark .navbar .navbar-collapse {
+    background-color: transparent;
+  }
+}
+.page.theme-dark .navbar .navbar-toggler .navbar-toggler-icon {
+  color: #fff !important;
+}
+.page.theme-dark .navbar .navbar-toggler:focus .navbar-toggler-icon,
+.page.theme-dark .navbar .navbar-toggler:active .navbar-toggler-icon {
+  color: var(--color-highlight);
+}
+.page.theme-dark .navbar .title-page {
+  color: #fff;
+}
+.page.theme-dark .navbar .navbar-nav .nav-link {
+  color: #fff !important;
+}
+.page.theme-dark .navbar .navbar-nav .nav-link svg {
+  color: var(--color-highlight) !important;
+}
+.page.theme-dark .navbar .navbar-nav .nav-link:active,
+.page.theme-dark .navbar .navbar-nav .nav-link:hover {
+  color: white;
+  background-color: var(--color-primary-lighten);
+}
+@media (min-width: 768px) {
+  .page.theme-dark .navbar .navbar-nav .nav-link:active,
+  .page.theme-dark .navbar .navbar-nav .nav-link:hover {
+    color: var(--color-primary-darken) !important;
+    background-color: transparent !important;
+  }
+}
+.page.theme-dark .navbar .navbar-nav .nav-link:active:not(.social-media) svg,
+.page.theme-dark .navbar .navbar-nav .nav-link:hover:not(.social-media) svg {
+  color: var(--color-highlight);
+}
+.navbar + .main {
+  margin-top: 80px;
+}
+/*# sourceMappingURL=styles.css.map */

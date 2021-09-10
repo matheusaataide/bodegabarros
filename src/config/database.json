@@ -13,10 +13,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "matheusaat_add2",
+    "password": "At41d3",
+    "database": "matheusaataide",
+    "host": "mysql.matheusaataide.kinghost.net",
     "dialect": "mysql"
   }
 }

@@ -1,0 +1,3 @@
+client (clientId*, name, phone, points, status, obs)
+district (districtId*, name, deliveryPrice, status, obs)
+address (addressId*, streetName, streetNumber, complement, reference, obs, clientId, districtId)

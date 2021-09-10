@@ -1,0 +1,41 @@
+{
+  "name": "bodegabarros",
+  "version": "1.0.0",
+  "description": "Sistema para controle de pedidos para pizzaria.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "concurrently \"npm run server\" \"npm run pos\"",
+    "build": "npm run buildServer",
+    "buildServer": "rimraf dist && babel src -s -D -d dist --presets @babel/env",
+    "server": "cross-env NODE_ENV=development nodemon --ignore ./frontend --exec \"babel-node src --presets @babel/env --trace-warnings\"",
+    "pos": "cd pos && npm start"
+  },
+  "author": "Matheus Ataide <matheusantonio96@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "http-status": "^1.5.0",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.1",
+    "concurrently": "^6.2.0",
+    "create-react-app": "^4.0.3",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.12",
+    "rimraf": "^3.0.2",
+    "sequelize-cli": "^6.2.0"
+  },
+  "keywords": []
+}
